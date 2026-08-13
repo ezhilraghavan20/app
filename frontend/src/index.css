@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: #040B18;
+  color: #E2E8F0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(8,18,42,0.4); }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,175,55,0.5); }
+
+/* Glass card */
+.glass-card {
+  background: rgba(8,18,42,0.7);
+  border: 1px solid rgba(212,175,55,0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212,175,55,0.06);
+}
+
+.glass-card-hover {
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.glass-card-hover:hover {
+  border-color: rgba(212,175,55,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 20px rgba(212,175,55,0.1);
+}
+
+/* Severity badges */
+.sev-critical { background: rgba(239,68,68,0.15); color: #EF4444; border: 1px solid rgba(239,68,68,0.3); }
+.sev-high     { background: rgba(249,115,22,0.15); color: #F97316; border: 1px solid rgba(249,115,22,0.3); }
+.sev-medium   { background: rgba(234,179,8,0.15);  color: #EAB308; border: 1px solid rgba(234,179,8,0.3); }
+.sev-low      { background: rgba(34,197,94,0.15);  color: #22C55E; border: 1px solid rgba(34,197,94,0.3); }
+.sev-info     { background: rgba(59,130,246,0.15); color: #3B82F6; border: 1px solid rgba(59,130,246,0.3); }
+
+/* Table */
+.nx-table { width: 100%; border-collapse: collapse; }
+.nx-table th { padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: rgba(212,175,55,0.7);
+  border-bottom: 1px solid rgba(212,175,55,0.1); }
+.nx-table td { padding: 12px 14px; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.nx-table tr:hover td { background: rgba(212,175,55,0.03); }
+
+/* Input */
+.nx-input {
+  width: 100%; padding: 10px 14px; background: rgba(8,18,42,0.8);
+  border: 1px solid rgba(212,175,55,0.2); border-radius: 10px;
+  color: #E2E8F0; font-size: 14px; outline: none; transition: border-color 0.2s;
+}
+.nx-input:focus { border-color: rgba(212,175,55,0.5); }
+.nx-input::placeholder { color: rgba(226,232,240,0.3); }
+
+/* Button */
+.btn-gold {
+  padding: 10px 20px; background: linear-gradient(135deg, #D4AF37, #B8941E);
+  color: #040B18; font-weight: 600; font-size: 13px; border-radius: 10px;
+  border: none; cursor: pointer; transition: opacity 0.2s, transform 0.1s;
+}
+.btn-gold:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-gold:active { transform: translateY(0); }
+
+.btn-ghost {
+  padding: 10px 20px; background: rgba(212,175,55,0.08);
+  color: rgba(212,175,55,0.8); font-weight: 500; font-size: 13px;
+  border-radius: 10px; border: 1px solid rgba(212,175,55,0.2);
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-ghost:hover { background: rgba(212,175,55,0.15); border-color: rgba(212,175,55,0.4); }
+
+.btn-danger {
+  padding: 8px 16px; background: rgba(239,68,68,0.12);
+  color: #EF4444; font-size: 13px; border-radius: 8px;
+  border: 1px solid rgba(239,68,68,0.25); cursor: pointer; transition: all 0.2s;
+}
+.btn-danger:hover { background: rgba(239,68,68,0.2); }
